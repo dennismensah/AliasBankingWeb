@@ -7,7 +7,7 @@
     "url": "https://github.com/creativetimofficial/ct-material-dashboard-pro-angular.git"
   },
   "scripts": {
-    "postinstall": "ng build --prod",
+    "postinstall": "ng build --aot --prod",
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
