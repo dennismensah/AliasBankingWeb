@@ -1,0 +1,88 @@
+<!--<div class="main-content mt-5">
+  <div class="container-fluid">
+    <div class="col mr-auto ml-auto">
+      <div class="wizard-container">
+        <div class="card card-wizard" data-color="rose" id="wizardProfile">
+          <form [formGroup]="type" (ngSubmit)="onSubmit()">
+            <div class="card-header text-center">
+              <h3 class="card-title">
+                Add A Joint Customer
+              </h3>
+            </div>
+            <div class="wizard-navigation">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#jointinfo" data-toggle="tab" role="tab">
+                    Joint Customer Details
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="jointinfo">
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100">
+                          <mat-label class="font-weight-bold text-dark h5 pb-3">Joint Creation Date</mat-label>
+                          <input [value]="date" disabled matInput [matDatepicker]="picker" placeholder="Joint Creation Date" (click)="picker.open()">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-chip-list w-100">
+                          <mat-label class="font-weight-bold text-dark h5">Joint Individuals</mat-label>
+                          <mat-chip-list #chipList>
+                            <mat-chip *ngFor="let individual of individuals" [selectable]="selectable" [removable]="removable" (removed)="remove(individual)">
+                              {{individual}}
+                              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            <input class="w-100" placeholder="Joint Individuals" #individualInput [formControl]="individualCtrl" [matAutocomplete]="auto"
+                              [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                              (matChipInputTokenEnd)="add($event)">
+                          </mat-chip-list>
+                          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                            <mat-option *ngFor="let filteredIndividual of filteredIndividuals | async" [value]="filteredIndividual">
+                              {{filteredIndividual}}
+                            </mat-option>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="input-group form-control-lg">
+                          <mat-slide-toggle formControlName="BroadcastAlert" class="example-margin text-left w-100" [color]="bcolor" [checked]="bchecked">
+                            Broadcast Alert
+                          </mat-slide-toggle>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="input-group form-control-lg">
+                          <mat-slide-toggle formControlName="SupportAlert" class="example-margin text-left w-100" [color]="scolor" [checked]="schecked">
+                            Support Alert
+                          </mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="mr-auto">
+                <input type="button" class="btn btn-previous btn-fill bg-dark btn-wd disabled" name="previous" value="Previous">
+              </div>
+              <div class="ml-auto">
+                <input type="button" class="btn btn-next btn-fill bg-dark btn-wd" name="next" value="Next">
+                <input type="submit" class="btn btn-finish btn-fill bg-dark btn-wd" name="finish" value="Create" style="display: none;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+

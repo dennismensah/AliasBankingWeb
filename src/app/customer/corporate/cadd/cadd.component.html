@@ -1,0 +1,155 @@
+<div class="main-content mt-5">
+  <div class="container-fluid">
+    <div class="col mr-auto ml-auto">
+      <!--      Wizard container        -->
+      <div class="wizard-container">
+        <div class="card card-wizard" data-color="rose" id="wizardProfile">
+          <form [formGroup]="type" (ngSubmit)="onSubmit()">
+            <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+            <div class="card-header text-center">
+              <h3 class="card-title">
+                Add A Corporate Customer
+              </h3>
+              <!--<h5 class="card-description">This information will let us know more about you.</h5>-->
+            </div>
+            <div class="wizard-navigation">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#corporateinfo" data-toggle="tab" role="tab">
+                    Corporate Details
+                  </a>
+                </li>
+                <!--<li class="nav-item">
+                  <a class="nav-link" href="#nextofkin" data-toggle="tab" role="tab">
+                    Next Of Kin
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#identification" data-toggle="tab" role="tab">
+                    Picture And Identification
+                  </a>
+                </li>-->
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="corporateinfo">
+                  <!--<h5 class="info-text"> All fields marked  *  are required</h5>-->
+                  <div class="row justify-content-center">
+                    <div class="col-md-5 ">
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'CompanyName')">
+                          <mat-label>Company Name</mat-label>
+                          <input type="text" name="CompanyName" matInput id="text" placeholder="Company Name" formControlName="CompanyName">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'NatureOfBusiness')">
+                          <mat-label>Nature Of Business</mat-label>
+                          <input type="text" name="NatureOfBusiness" matInput id="text" placeholder="Nature Of Business" formControlName="NatureOfBusiness">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'DateOfIncorporation')">
+                          <mat-label>Date Of Incorporation</mat-label>
+                          <input matInput [matDatepicker]="dpicker" placeholder="Date Of Incorporation" (click)="dpicker.open()" formControlName="DateOfIncorporation">
+                          <mat-datepicker-toggle matSuffix [for]="dpicker"></mat-datepicker-toggle>
+                          <mat-datepicker #dpicker></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'RegistrationNumber')">
+                          <mat-label>Registration Number</mat-label>
+                          <input type="text" name="RegistrationNumber" matInput id="text" placeholder="Registration Number" formControlName="RegistrationNumber">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'TinNumber')">
+                          <mat-label>Tin Number</mat-label>
+                          <input type="text" name="TinNumber" matInput id="text" placeholder="Tin Number" formControlName="TinNumber">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'CompanyEmail')">
+                          <mat-label>Company Email</mat-label>
+                          <input type="text" name="CompanyEmail" matInput id="text" placeholder="Company Email" formControlName="CompanyEmail">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'CompanyPhone')">
+                          <mat-label>Company Telephone Number</mat-label>
+                          <input type="tel" name="CompanyPhone" matInput id="text" placeholder="Company Telephone Number" formControlName="CompanyPhone">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class=" col-md-5">
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'CompanyFax')">
+                          <mat-label>Fax</mat-label>
+                          <input type="text" name="CompanyFax" matInput id="text" placeholder="Fax" formControlName="CompanyFax">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'CompanyWebsite')">
+                          <mat-label>Website</mat-label>
+                          <input type="text" name="CompanyWebsite" matInput id="text" placeholder="Website" formControlName="CompanyWebsite">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'PostCode')">
+                          <mat-label>Post Code</mat-label>
+                          <input type="text" name="PostCode" matInput id="text" placeholder="Post Code" formControlName="PostCode">
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'Address')">
+                          <mat-label>Address</mat-label>
+                          <textarea matInput placeholder="Address" formControlName="Address" type="text" id="text" name="Address"></textarea>
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-form-field class="example-full-width has-label w-100" [ngClass]="displayFieldCss(type, 'RelationalOfficer')">
+                          <mat-label>Relation Officer</mat-label>
+                          <mat-select formControlName="RelationalOfficer" id="text" placeholder="Relation Officer" name="RelationalOfficer">
+                            <mat-option *ngFor="let user of users" [value]="user.UserId">
+                              {{ user.FirstName }}{{ user.LastName }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-slide-toggle formControlName="BroadcastAlert" class="example-margin text-left w-100" [color]="bcolor" [checked]="bchecked">
+                          <span style="color:#000;">Broadcast Alert</span>
+                        </mat-slide-toggle>
+                      </div>
+                      <div class="input-group form-control-lg">
+                        <mat-slide-toggle formControlName="SupportAlert" class="example-margin text-right" [color]="bcolor" [checked]="schecked">
+                          <span style="color:#000;">Support Alert</span>
+                        </mat-slide-toggle>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--<div class="tab-pane" id="nextofkin">
+                </div>
+                <div class="tab-pane" id="identification">
+                </div>-->
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="mr-auto">
+                <input type="button" class="btn btn-previous btn-fill bg-dark btn-wd disabled" name="previous" value="Previous">
+              </div>
+              <div class="ml-auto">
+                <!--<input type="button" class="btn btn-next btn-fill bg-dark btn-wd" name="next" value="Next">-->
+                <input type="submit" class="btn btn-finish btn-fill bg-dark btn-wd" name="finish" value="Create" style="display: none;">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- wizard container -->
+    </div>
+  </div>
+</div>
