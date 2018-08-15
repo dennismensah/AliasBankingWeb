@@ -1,6 +1,6 @@
 import { CorporateService } from './../services/corporate.service';
 import { Observable } from 'rxjs';
-import { Corporate } from './../models/Corporate';
+import { Corporate } from './../models/corporate';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '../../../node_modules/@angular/core';
 
